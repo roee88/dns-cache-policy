@@ -1,0 +1,120 @@
+{
+"NS_HG_P1": [
+        ["<rand>.<domain>", "A"],
+        [],
+        [["sub.<domain>", "<domain_ns>", "NS"]],
+        [["<domain_ns>", "<fake_ns_ip>", "A"]],
+        ["<verify>.<domain> <fake_ns_ip>"]
+    ], 
+    
+"NS_HG_P2": [
+        ["<rand>.<domain>", "A"],
+        [["<rand>.<domain>", "<fake_ns_ip>", "A"]],
+        [["<domain>", "<domain_ns>", "NS"]],
+        [["<domain_ns>", "<fake_ns_ip>", "A"]],
+        ["<verify>.<domain> <fake_ns_ip>"]
+    ], 
+    
+"NS_HG_P3": 
+        [["<rand>.<domain>", "A"],
+        [],
+        [["<domain>", "<domain_ns>", "NS"]],
+        [["<domain_ns>", "<fake_ns_ip>", "A"]],
+        ["<verify>.<domain> <fake_ns_ip>"]
+    ], 
+    
+"NS_HG_P4": [
+        ["<rand>.sub.<domain>", "A"],
+        [],
+        [["sub.<domain>", "<domain_ns>", "NS"]],
+        [["<domain_ns>", "<fake_ns_ip>", "A"]],
+        ["<verify>.<domain> <fake_ns_ip>"]
+    ], 
+    
+"NS_NEW_P1": [
+        ["<rand>.<domain>", "A"],
+        [["<rand>.<domain>", "<fake_ns_ip>", "A"]],
+        [["<domain>", "<fake_ns>", "NS"]],
+        [["<fake_ns>", "<fake_ns_ip>", "A"]],
+        ["<verify>.<domain> <fake_ns_ip>"]
+    ], 
+        
+"NS_NEW_P2": [
+        ["<rand>.<domain>", "A"], [],
+		 [["<domain>", "<fake_ns>", "NS"]],
+		[["<fake_ns>", "<fake_ns_ip>", "A"]],
+		["<verify>.<domain> <fake_ns_ip>"]
+	],
+		
+"NS_RO_P1": [["<rand>.<domain>", "A"],
+		[],
+		[["<rand>.<domain>", "<domain_ns>", "NS"]],
+		[["<domain_ns>", "<fake_ns_ip>", "A"]],
+		["<verify>.<domain> <fake_ns_ip>"]
+    ],
+		
+"REF_NS_P1": [["<rand>.<666domain>", "A"],
+		[],
+		[["<666domain>", "<refdomain_ns>", "NS"]],
+		[["<refdomain_ns>", "<fake_ns_ip>", "A"]],
+		["<verify>.<refdomain> <fake_ns_ip>"]
+    ],
+		
+"REF_NS_P2": [["<rand>.<666domain>", "A"],
+		[],
+		[["<666domain>", "<refdomain_ns>", "NS"]],
+		[["<refdomain_ns>", "<fake_ns_ip>", "A"],
+		["<refdomain_ns>", "<fake_ns_ipv6>", "AAAA"]],
+		["<verify>.<refdomain> <fake_ns_ip>"]
+    ],
+		
+"REF_TR_P1": [["<rand>.<666domain>", "A"],
+		[],
+		[["<666domain>", "<target_record>.<refdomain>", "NS"]],
+		[["<target_record>.<refdomain>", "<fake_ns_ip>", "A"]],
+		["<target_record>.<refdomain> <fake_ns_ip>"]
+    ],
+		
+"REF_TR_P2": [["<rand>.<666domain>", "A"],
+		[],
+		[["<666domain>", "<target_record>.<refdomain>", "NS"]],
+		[["<target_record>.<refdomain>", "<fake_ns_ip>", "A"],
+		["<target_record>.<refdomain>", "<fake_ns_ipv6>", "AAAA"]],
+		["<target_record>.<refdomain> <fake_ns_ip>"]
+    ],
+		
+"TR_HG_P1": [["<rand>.<domain>", "A"],
+		[],
+		[["sub.<domain>", "<target_record>.<domain>", "NS"]],
+		[["<target_record>.<domain>", "<fake_ns_ip>", "A"]],
+		["<target_record>.<domain> <fake_ns_ip>"]
+    ],
+		
+"TR_HG_P2": [["<rand>.<domain>", "A"],
+		[["<rand>.<domain>", "<fake_ns_ip>", "A"]],
+		[["<domain>", "<target_record>.<domain>", "NS"]],
+		[["<target_record>.<domain>", "<fake_ns_ip>", "A"]],
+		["<target_record>.<domain> <fake_ns_ip>"]
+    ],
+		
+"TR_HG_P3": [["<rand>.<domain>", "A"],
+		[],
+		[["<domain>", "<target_record>.<domain>", "NS"]],
+		[["<target_record>.<domain>", "<fake_ns_ip>", "A"]],
+		["<target_record>.<domain> <fake_ns_ip>"]
+    ],
+		
+"TR_HG_P4": [["<rand>.sub.<domain>", "A"],
+		[],
+		[["sub.<domain>", "<target_record>.<domain>", "NS"]],
+		[["<target_record>.<domain>", "<fake_ns_ip>", "A"]],
+		["<target_record>.<domain> <fake_ns_ip>"]
+    ],
+		
+"TR_RO_P1": [["<rand>.<domain>", "A"],
+		[],
+		[["<rand>.<domain>", "<target_record>.<domain>", "NS"]],
+		[["<target_record>.<domain>", "<fake_ns_ip>", "A"]],
+		["<target_record>.<domain> <fake_ns_ip>"]
+    ]
+}

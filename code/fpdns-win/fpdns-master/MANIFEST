@@ -1,0 +1,5 @@
+LICENSE
+MANIFEST
+Makefile.PL
+lib/Net/DNS/Fingerprint.pm
+apps/fpdns

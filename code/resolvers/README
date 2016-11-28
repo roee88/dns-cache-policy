@@ -1,0 +1,5 @@
+python get-active-resolvers.py -ipcol 0 dns-resolvers-20140912.csv.15 results.txt
+cut -d , -f 1 results.txt >resolvers.txt
+awk ' !x[$0]++' resolvers.txt >resolvers-final.txt
+rm resolvers.txt
+

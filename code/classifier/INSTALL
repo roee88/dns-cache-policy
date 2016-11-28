@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if [ -e "libtins-master.tar.gz" ] 
+then
+    apt-get update
+    apt-get install -y libpcap-dev libssl-dev cmake build-essential g++
+    apt-get install -y libboost1.55-all-dev
+    tar -xzf libtins-master.tar.gz
+    cd libtins-master
+    mkdir build
+    cd build
+    cmake ../ -DLIBTINS_ENABLE_CXX11=1
+    make
+    make install
+    ldconfig
+    cd ../..
+    rm libtins-master.tar.gz
+fi
+
+if [ -e "fpdns-master.tar.gz" ] 
+then
+    apt-get install -y perl libdigest-hmac-perl libio-socket-inet6-perl libnet-dns-perl libnet-ip-perl libsocket6-perl
+    tar -xzf fpdns-master.tar.gz
+    cd fpdns-master
+    perl Makefile.PL
+    make
+    make install
+    cd ..
+    rm fpdns-master.tar.gz
+fi
+
+if [ -e "caching_policy_classifier.tar.gz" ] 
+then
+    tar -xzf caching_policy_classifier.tar.gz
+    cd caching_policy_classifier
+    make
+    cd ..
+    rm caching_policy_classifier.tar.gz
+    if [ ! -e "classifier" ]
+    then
+        ln -s ./caching_policy_classifier/app classifier
+    fi
+fi
+
+if [ -e "fake_dns_server.tar.gz" ] 
+then
+    tar -xzf fake_dns_server.tar.gz
+    cd fake_dns_server
+    make
+    cd ..
+    rm fake_dns_server.tar.gz
+    if [ ! -e "fakeserv" ] 
+    then
+        ln -s ./fake_dns_server/app fakeserv
+    fi    
+fi
+
+if [ ! -e "output" ]
+then
+    mkdir output
+fi

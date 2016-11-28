@@ -1,0 +1,5 @@
+#!/bin/bash
+#Script to process ip ranges to ban using IPSet and IPTables
+sudo apt-get install -y ipset
+ipset create israel.zone hash:net
+while read line; do ipset add israel.zone $line; done < israel.txt

@@ -1,0 +1,5 @@
+#!/bin/bash
+iptables -A INPUT -s 130.83.186.0/24 -j ACCEPT
+iptables -A INPUT -m set --match-set israel.zone src -j ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -j DROP
